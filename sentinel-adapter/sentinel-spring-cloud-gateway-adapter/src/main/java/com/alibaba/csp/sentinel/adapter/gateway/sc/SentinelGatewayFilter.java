@@ -72,7 +72,7 @@ public class SentinelGatewayFilter implements GatewayFilter, GlobalFilter, Order
                 .orElse("");
             asyncResult = asyncResult.transform(
                 new SentinelReactorTransformer<>(new EntryConfig(routeId, ResourceTypeConstants.COMMON_API_GATEWAY,
-                    EntryType.IN, 1, params, new ContextConfig(contextName(routeId), origin)))
+                    EntryType.OUT, 1, params, new ContextConfig(contextName(routeId), origin)))
             );
         }
 
@@ -82,7 +82,7 @@ public class SentinelGatewayFilter implements GatewayFilter, GlobalFilter, Order
                 r -> r.getResourceMode() == SentinelGatewayConstants.RESOURCE_MODE_CUSTOM_API_NAME);
             asyncResult = asyncResult.transform(
                 new SentinelReactorTransformer<>(new EntryConfig(apiName, ResourceTypeConstants.COMMON_API_GATEWAY,
-                    EntryType.IN, 1, params))
+                    EntryType.OUT, 1, params))
             );
         }
 

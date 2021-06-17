@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
+    <artifactId>sentinel-spring-cloud-gateway-adapter-ry</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -79,4 +79,16 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>Releases</id>
+            <name>Releases</name>
+            <url>https://repo.rongcloud.net/repository/beem_releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Snapshots</id>
+            <name>Snapshots</name>
+            <url>https://repo.rongcloud.net/repository/beem_snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
